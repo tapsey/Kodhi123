@@ -6,6 +6,7 @@ import javax.swing.JWindow;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.Toolkit;
@@ -36,10 +37,13 @@ public class Splash extends JWindow{
 		
 		
 		//setLocation(100, 100);
-				setLocationRelativeTo(null);
+			//	setLocationRelativeTo(null);
 				setSize(500,400);
 				setVisible(true);
 				setAlwaysOnTop(true);
+				
+				Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+				this.setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
 				
 
 //		setSize(633, 300);
