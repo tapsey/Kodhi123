@@ -7,6 +7,9 @@
  * */
 package com.bad_code.tapsey.codeonetwothree.system;
 
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
+
 import com.bad_code.tapsey.codeonetwothree.environment.context.PreferenceManager;
 import com.bad_code.tapsey.codeonetwothree.environment.context.Preferences;
 import com.bad_code.tapsey.codeonetwothree.environment.setup.Setup;
@@ -18,6 +21,24 @@ public class StartupManager {
 	public static void main(String... args) {
 
 		Splash.open();
+		
+		try {
+            // Set cross-platform Java L&F (also called "Metal")
+        UIManager.setLookAndFeel(
+            UIManager.getCrossPlatformLookAndFeelClassName());
+    } 
+    catch (UnsupportedLookAndFeelException e) {
+       // handle exception
+    }
+    catch (ClassNotFoundException e) {
+       // handle exception
+    }
+    catch (InstantiationException e) {
+       // handle exception
+    }
+    catch (IllegalAccessException e) {
+       // handle exception
+    }
 				
 		if (verifyEnvironment()) {
 

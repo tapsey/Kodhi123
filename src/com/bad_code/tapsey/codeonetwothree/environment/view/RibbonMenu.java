@@ -1,5 +1,6 @@
 package com.bad_code.tapsey.codeonetwothree.environment.view;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JToolBar;
 
@@ -14,7 +15,8 @@ public class RibbonMenu extends JToolBar {
 	public RibbonMenu() {
 		setBackground(new Color(51, 51, 51));
 
-		JButton btnNewButton = new JButton("Fambisa");
+		JButton btnNewButton = new JButton();
+		btnNewButton.setIcon(new ImageIcon(getClass().getResource("/res/run.png")));
 		btnNewButton.setToolTipText("Execute logic");
 		btnNewButton.setForeground(new Color(255, 255, 255));
 		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 11));
@@ -40,7 +42,8 @@ public class RibbonMenu extends JToolBar {
 			}
 		});
 
-		JButton btnNewButton_1 = new JButton("Wona mafambiro");
+		JButton btnNewButton_1 = new JButton();
+		btnNewButton_1.setIcon(new ImageIcon(getClass().getResource("/res/visualise.png")));
 		btnNewButton_1.setToolTipText("Animate through logic.");
 		btnNewButton_1.setForeground(new Color(255, 255, 255));
 		btnNewButton_1.setFont(new Font("Tahoma", Font.BOLD, 11));
@@ -66,7 +69,9 @@ public class RibbonMenu extends JToolBar {
 			}
 		});
 
-		JButton btnNewButton_2 = new JButton("Zorodza");
+		JButton btnNewButton_2 = new JButton();
+		btnNewButton_2.setBackground(new Color(0,0,0,0));
+		btnNewButton_2.setIcon(new ImageIcon(getClass().getResource("/res/pausebtn.png")));
 		btnNewButton_2.setToolTipText("Pause execution");
 		btnNewButton_2.setForeground(new Color(255, 255, 255));
 		btnNewButton_2.setFont(new Font("Tahoma", Font.BOLD, 11));
@@ -81,7 +86,8 @@ public class RibbonMenu extends JToolBar {
 			}
 		});
 		
-		JButton btnNewButton_6 = new JButton("Enderera mberi");
+		JButton btnNewButton_6 = new JButton();
+		btnNewButton_6.setIcon(new ImageIcon(getClass().getResource("/res/resume.png")));
 		btnNewButton_6.setToolTipText("Resume execution");
 		btnNewButton_6.setForeground(new Color(255, 255, 255));
 		btnNewButton_6.setFont(new Font("Tahoma", Font.BOLD, 11));
@@ -96,7 +102,8 @@ public class RibbonMenu extends JToolBar {
 			}
 		});
 
-		JButton btnStop = new JButton("Mira");
+		JButton btnStop = new JButton();
+		btnStop.setIcon(new ImageIcon(getClass().getResource("/res/stop.png")));
 		btnStop.setToolTipText("Stop execution");
 		btnStop.setForeground(new Color(255, 255, 255));
 		btnStop.setFont(new Font("Tahoma", Font.BOLD, 11));
@@ -113,7 +120,8 @@ public class RibbonMenu extends JToolBar {
 			}
 		});
 
-		JButton btnViewAs = new JButton("wona zvazviri kuJAVA");
+		JButton btnViewAs = new JButton("Wona zvazviri kuJAVA");
+		btnViewAs.setIcon(new ImageIcon(getClass().getResource("/res/javasource.png")));
 		btnViewAs.setToolTipText("View logic as would be implemented in various languages.");
 		btnViewAs.setForeground(new Color(255, 255, 255));
 		btnViewAs.setFont(new Font("Tahoma", Font.BOLD, 11));

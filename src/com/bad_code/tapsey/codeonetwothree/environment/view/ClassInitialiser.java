@@ -29,6 +29,7 @@ public class ClassInitialiser extends JDialog {
 		codePanel = panelin;
 		getContentPane().setLayout(new BorderLayout(0, 0));
 		setTitle("Class");
+		setLocationRelativeTo(null);
 
 		JPanel panel = new JPanel();
 		panel.setBackground(new Color(102, 102, 102));
