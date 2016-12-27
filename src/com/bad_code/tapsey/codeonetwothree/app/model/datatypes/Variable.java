@@ -38,7 +38,24 @@ public class Variable<T> extends Element<T> implements LowerDockable<T> {
 		this.name = name;
 	}
 
-	
+	public DataType getVariableDataType(){
+		
+		if(data instanceof Integer){
+			
+			return DataType.INTEGER;
+		}else if(data instanceof Double){
+			
+			return DataType.DOUBLE;
+		} else if(data instanceof Boolean){
+			
+			return DataType.BOOLEAN;
+		} else if(data instanceof String){
+			
+			return DataType.STRING;
+		}
+		return DataType.Void;
+		
+	}
 
 	@Override
 	public ElementView getView() {
@@ -75,19 +92,7 @@ public class Variable<T> extends Element<T> implements LowerDockable<T> {
 	}
 
 	@Override
-	public void setData(T data) {		
-		
-//		if(){
-//			
-//		}else if(){
-//			
-//		}else if(){
-//			
-//		}else if(){
-//			
-//		}else if(){
-//			
-//		}
+	public void setData(T data) {	
 
 		
 		super.setData(data);

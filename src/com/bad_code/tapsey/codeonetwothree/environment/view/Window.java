@@ -29,6 +29,10 @@ import com.jgoodies.forms.layout.ColumnSpec;
 import com.jgoodies.forms.layout.FormLayout;
 import com.jgoodies.forms.layout.RowSpec;
 
+import defaultvalues.Constants;
+import javax.swing.border.BevelBorder;
+import javax.swing.border.EtchedBorder;
+
 
 @SuppressWarnings("serial")
 public class Window extends JFrame{
@@ -49,33 +53,39 @@ public class Window extends JFrame{
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 				
 		MenuBar menuBar = new MenuBar();
-		menuBar.setBackground(new Color(153, 153, 153));
+		menuBar.setBorderPainted(false);
+		menuBar.setBackground(Color.decode(Constants.ACCENT_COLOR));
 		setJMenuBar(menuBar);
 		setResizable(true);
 		getContentPane().setLayout(new BorderLayout(0, 0));
 		
 		RibbonMenu ribbonMenu = new RibbonMenu();
-		ribbonMenu.setBackground(new Color(102, 102, 102));
+		ribbonMenu.setBackground(Color.decode(Constants.BACK_COLOR));
 		getContentPane().add(ribbonMenu, BorderLayout.NORTH);
 		
 		JSplitPane panel = new JSplitPane(JSplitPane.VERTICAL_SPLIT);
+		panel.setBorder(null);
+		panel.setOneTouchExpandable(true);
 		getContentPane().add(panel, BorderLayout.CENTER);
 		
 		
 		appPanel = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT);
-		appPanel.setBackground(new Color(102, 102, 102));
+		appPanel.setBackground(Color.decode(Constants.BACK_COLOR));
 		panel.add(appPanel);
 		
 		
 		codePanel = new CodePanel();
-		codePanel.setBackground(new Color(102, 102, 102));
+		codePanel.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
+		codePanel.setBackground(Color.decode(Constants.BACK_COLOR));
 		appPanel.add(codePanel);
 		
 		ExpressionPanel expressionPanel = new ExpressionPanel();
-		expressionPanel.setBackground(new Color(102, 102, 102));
+		expressionPanel.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
+		expressionPanel.setBackground(Color.decode(Constants.BACK_COLOR));
 		appPanel.add(expressionPanel);
 		
 		ConsolePane consolePane = new ConsolePane();
+		consolePane.setBackground(Color.decode(Constants.BACK_COLOR));
 		panel.add(consolePane);
 	//	System.out.println();
 		Splash.setMessage("bringing UI to front");
@@ -83,6 +93,8 @@ public class Window extends JFrame{
 		
 		setVisible(true);
 		Splash.close();
+		
+		
 		
 				
 	}
@@ -117,7 +129,7 @@ public class Window extends JFrame{
 	
 	public static void openFile(){
 		try {
-			pr = new PrintWriter(new File(System.getProperty("user.home") + "/.GCE/"+runClass.getName()+".java"));
+			pr = new PrintWriter(new File(System.getProperty("user.home") + "/123 Sources/"+runClass.getName()+".java"));
 		} catch (FileNotFoundException e) {
 		}
 	}

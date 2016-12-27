@@ -54,6 +54,8 @@ import com.bad_code.tapsey.codeonetwothree.app.model.factory.operator.ToBooleanF
 import com.bad_code.tapsey.codeonetwothree.app.model.factory.operator.ToDoubleFactory;
 import com.bad_code.tapsey.codeonetwothree.app.model.factory.operator.ToIntFactory;
 
+import defaultvalues.Constants;
+
 @SuppressWarnings("serial")
 public class ExpressionPanel extends JPanel{
 	public ExpressionPanel() {
@@ -65,19 +67,19 @@ public class ExpressionPanel extends JPanel{
 		JLabel lblExpressionPane = new JLabel("Sharura zvivakiso");
 		lblExpressionPane.setToolTipText("Contains programming elements which can be dragged into code pane.");
 		lblExpressionPane.setForeground(Color.WHITE);
-		lblExpressionPane.setBackground(new Color(51, 51, 51));
+		lblExpressionPane.setBackground(Color.decode(Constants.BACK_COLOR));
 		lblExpressionPane.setFont(new Font("Tahoma", Font.BOLD, 12));
 		add(lblExpressionPane, BorderLayout.NORTH);
 		
 		JPanel panel = new JPanel();
-		panel.setBackground(new Color(102, 102, 102));
+		panel.setBackground(Color.decode(Constants.BACK_COLOR));
 		add(panel, BorderLayout.CENTER);
 		panel.setLayout(new BorderLayout(0, 0));
 		
 		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.RIGHT);
 		tabbedPane.setFont(new Font("Tahoma", Font.BOLD, 12));
 		tabbedPane.setForeground(new Color(255, 255, 255));
-		tabbedPane.setBackground(new Color(102, 102, 102));
+		tabbedPane.setBackground(Color.decode(Constants.BACK_COLOR));
 		tabbedPane.setBorder(new LineBorder(new Color(51, 51, 51), 1, true));
 		panel.add(tabbedPane, BorderLayout.CENTER);
 		
@@ -86,15 +88,14 @@ public class ExpressionPanel extends JPanel{
 		scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 		tabbedPane.addTab("Begginer", null, scrollPane, null);
 		tabbedPane.setForegroundAt(0, new Color(255, 255, 255));
-		tabbedPane.setBackgroundAt(0, new Color(0, 255, 0));
+		tabbedPane.setBackgroundAt(0,Color.decode(Constants.BACK_COLOR));
 		
 		JPanel expressionPane = new JPanel();
-		expressionPane.setBackground(Color.WHITE);
+		expressionPane.setBackground(Color.decode(Constants.BACK_COLOR));
 		scrollPane.setViewportView(expressionPane);
 		
 		BooleanDeclaratorFactory blndclrtrfctrBoolean = new BooleanDeclaratorFactory();
 		blndclrtrfctrBoolean.setToolTipText("boolean rinokwanisa kutakura zvinhu zviviri chete, true na false.\r\n");
-		blndclrtrfctrBoolean.setBackground(Color.WHITE);
 		blndclrtrfctrBoolean.setAlignmentX(Component.CENTER_ALIGNMENT);
 		blndclrtrfctrBoolean.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -103,13 +104,11 @@ public class ExpressionPanel extends JPanel{
 		
 		StringDeclaratorFactory strngdclrtrfctrString = new StringDeclaratorFactory();
 		strngdclrtrfctrString.setToolTipText("string rakaenzana neshoko mumutauro wamazuva ose.");
-		strngdclrtrfctrString.setBackground(Color.WHITE);
 		strngdclrtrfctrString.setAlignmentX(Component.CENTER_ALIGNMENT);
 		strngdclrtrfctrString.setText("string");
 		
 		DoubleDeclaratorFactory dbldclrtrfctrDouble = new DoubleDeclaratorFactory();
 		dbldclrtrfctrDouble.setToolTipText("double inhamba ine koma");
-		dbldclrtrfctrDouble.setBackground(Color.WHITE);
 		dbldclrtrfctrDouble.setAlignmentX(Component.CENTER_ALIGNMENT);
 		dbldclrtrfctrDouble.setText("double");
 		blndclrtrfctrBoolean.setText("boolean");
@@ -130,7 +129,6 @@ public class ExpressionPanel extends JPanel{
 		
 		PrintFactory prntfctrPrint = new PrintFactory();
 		prntfctrPrint.setToolTipText("print anyora zvabuda muprogram");
-		prntfctrPrint.setBackground(Color.WHITE);
 		prntfctrPrint.setAlignmentX(Component.CENTER_ALIGNMENT);
 		prntfctrPrint.setText("print");
 		expressionPane.add(prntfctrPrint);

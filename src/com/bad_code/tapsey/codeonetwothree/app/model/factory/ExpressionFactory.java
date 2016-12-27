@@ -12,6 +12,8 @@ import javax.swing.JButton;
 
 import com.bad_code.tapsey.codeonetwothree.environment.view.Window;
 
+import defaultvalues.Constants;
+
 import java.awt.Font;
 import java.awt.Color;
 
@@ -21,7 +23,8 @@ public abstract class ExpressionFactory extends JButton {
 	private ImageIcon icon;
 
 	public ExpressionFactory() {
-		setBackground(Color.WHITE);
+		setBackground(Color.decode(Constants.FORE_COLOR));
+		setForeground(Color.WHITE);
 		setFont(new Font("Verdana", Font.BOLD, 12));
 		
 		// setIcon(icon);

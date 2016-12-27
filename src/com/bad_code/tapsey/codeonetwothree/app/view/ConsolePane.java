@@ -9,6 +9,8 @@ import javax.swing.border.EtchedBorder;
 
 import com.bad_code.tapsey.codeonetwothree.environment.console.JConsole;
 
+import defaultvalues.Constants;
+
 @SuppressWarnings("serial")
 public class ConsolePane extends JPanel{
 	public ConsolePane() {
@@ -17,11 +19,12 @@ public class ConsolePane extends JPanel{
 		setLayout(new BorderLayout(0, 0));
 		
 		JConsole console = new JConsole();
+		console.setBackground(Color.BLACK);
 		add(console, BorderLayout.CENTER);
 		
 		JPanel panel = new JPanel();
 		panel.setToolTipText("Allows user to interact with program at runtime. The user can enter input and get output through the console.");
-		panel.setBackground(new Color(102, 102, 102));
+		panel.setBackground(Color.decode(Constants.BACK_COLOR));
 		FlowLayout flowLayout = (FlowLayout) panel.getLayout();
 		flowLayout.setAlignment(FlowLayout.LEFT);
 		add(panel, BorderLayout.NORTH);

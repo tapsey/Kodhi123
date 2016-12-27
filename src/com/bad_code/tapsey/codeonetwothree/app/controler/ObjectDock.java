@@ -7,7 +7,7 @@ public class ObjectDock extends LowerDock<Object>{
 
 
 	public ObjectDock(DockLocation loc) {
-		super(loc, DataType.INTEGER);//error here
+		super(loc, DataType.INTEGER);//todo error here
 	}
 
 	@Override

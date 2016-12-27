@@ -17,6 +17,9 @@ import com.bad_code.tapsey.codeonetwothree.app.view.container.MyClassView;
 
 import java.awt.Font;
 import java.awt.Color;
+import java.awt.Dialog.ModalExclusionType;
+import java.awt.Dialog.ModalityType;
+import java.awt.Window.Type;
 
 @SuppressWarnings("serial")
 public class ClassInitialiser extends JDialog {
@@ -26,6 +29,12 @@ public class ClassInitialiser extends JDialog {
 	JPanel codePanel;
 
 	public ClassInitialiser(JPanel panelin) {
+		setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+		setResizable(false);
+		setType(Type.POPUP);
+		setModalityType(ModalityType.APPLICATION_MODAL);
+		setModalExclusionType(ModalExclusionType.APPLICATION_EXCLUDE);
+		setAlwaysOnTop(true);
 		codePanel = panelin;
 		getContentPane().setLayout(new BorderLayout(0, 0));
 		setTitle("Class");

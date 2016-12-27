@@ -1,27 +1,38 @@
 package com.bad_code.tapsey.codeonetwothree.environment.view;
 
+import javax.swing.BoxLayout;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JToolBar;
+import javax.swing.border.Border;
+
+import com.bad_code.tapsey.codeonetwothree.app.view.MyButton;
+
+import defaultvalues.Constants;
 
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.Component;
+import javax.swing.Box;
+import java.awt.Dimension;
 
 @SuppressWarnings("serial")
 public class RibbonMenu extends JToolBar {
 	Thread runThread;
 	public RibbonMenu() {
 		setBackground(new Color(51, 51, 51));
+		
+		Component rigidArea_5 = Box.createRigidArea(new Dimension(10, 10));
+		add(rigidArea_5);
 
-		JButton btnNewButton = new JButton();
+		JButton btnNewButton = new MyButton();
 		btnNewButton.setIcon(new ImageIcon(getClass().getResource("/res/run.png")));
 		btnNewButton.setToolTipText("Execute logic");
-		btnNewButton.setForeground(new Color(255, 255, 255));
-		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 11));
-		btnNewButton.setBackground(new Color(51, 51, 51));
 		add(btnNewButton);
+		
+	
 
 		btnNewButton.addActionListener(new ActionListener() {
 
@@ -41,13 +52,13 @@ public class RibbonMenu extends JToolBar {
 				runThread.start();
 			}
 		});
+		
+		Component rigidArea = Box.createRigidArea(new Dimension(10, 10));
+		add(rigidArea);
 
-		JButton btnNewButton_1 = new JButton();
+		JButton btnNewButton_1 = new MyButton();
 		btnNewButton_1.setIcon(new ImageIcon(getClass().getResource("/res/visualise.png")));
 		btnNewButton_1.setToolTipText("Animate through logic.");
-		btnNewButton_1.setForeground(new Color(255, 255, 255));
-		btnNewButton_1.setFont(new Font("Tahoma", Font.BOLD, 11));
-		btnNewButton_1.setBackground(new Color(51, 51, 51));
 		add(btnNewButton_1);
 
 		btnNewButton_1.addActionListener(new ActionListener() {
@@ -68,14 +79,13 @@ public class RibbonMenu extends JToolBar {
 				runThread.start();
 			}
 		});
+		
+		Component rigidArea_1 = Box.createRigidArea(new Dimension(10, 10));
+		add(rigidArea_1);
 
-		JButton btnNewButton_2 = new JButton();
-		btnNewButton_2.setBackground(new Color(0,0,0,0));
+		JButton btnNewButton_2 = new MyButton();
 		btnNewButton_2.setIcon(new ImageIcon(getClass().getResource("/res/pausebtn.png")));
 		btnNewButton_2.setToolTipText("Pause execution");
-		btnNewButton_2.setForeground(new Color(255, 255, 255));
-		btnNewButton_2.setFont(new Font("Tahoma", Font.BOLD, 11));
-		btnNewButton_2.setBackground(new Color(51, 51, 51));
 		add(btnNewButton_2);
 
 		btnNewButton_2.addActionListener(new ActionListener() {
@@ -86,12 +96,12 @@ public class RibbonMenu extends JToolBar {
 			}
 		});
 		
-		JButton btnNewButton_6 = new JButton();
+		Component rigidArea_2 = Box.createRigidArea(new Dimension(10, 10));
+		add(rigidArea_2);
+		
+		JButton btnNewButton_6 = new MyButton();
 		btnNewButton_6.setIcon(new ImageIcon(getClass().getResource("/res/resume.png")));
 		btnNewButton_6.setToolTipText("Resume execution");
-		btnNewButton_6.setForeground(new Color(255, 255, 255));
-		btnNewButton_6.setFont(new Font("Tahoma", Font.BOLD, 11));
-		btnNewButton_6.setBackground(new Color(51, 51, 51));
 		add(btnNewButton_6);
 
 		btnNewButton_6.addActionListener(new ActionListener() {
@@ -101,13 +111,13 @@ public class RibbonMenu extends JToolBar {
 				runThread.resume();
 			}
 		});
+		
+		Component rigidArea_3 = Box.createRigidArea(new Dimension(10, 10));
+		add(rigidArea_3);
 
-		JButton btnStop = new JButton();
+		JButton btnStop = new MyButton();
 		btnStop.setIcon(new ImageIcon(getClass().getResource("/res/stop.png")));
 		btnStop.setToolTipText("Stop execution");
-		btnStop.setForeground(new Color(255, 255, 255));
-		btnStop.setFont(new Font("Tahoma", Font.BOLD, 11));
-		btnStop.setBackground(new Color(51, 51, 51));
 		add(btnStop);
 
 		btnStop.addActionListener(new ActionListener() {
@@ -119,14 +129,17 @@ public class RibbonMenu extends JToolBar {
 				Window.getjConsole().println("Execution force stoped");
 			}
 		});
+		
+		Component rigidArea_4 = Box.createRigidArea(new Dimension(10, 10));
+		add(rigidArea_4);
 
-		JButton btnViewAs = new JButton("Wona zvazviri kuJAVA");
+		JButton btnViewAs = new MyButton();
 		btnViewAs.setIcon(new ImageIcon(getClass().getResource("/res/javasource.png")));
 		btnViewAs.setToolTipText("View logic as would be implemented in various languages.");
-		btnViewAs.setForeground(new Color(255, 255, 255));
-		btnViewAs.setFont(new Font("Tahoma", Font.BOLD, 11));
-		btnViewAs.setBackground(new Color(51, 51, 51));
 		add(btnViewAs);
+		
+		Component rigidArea_6 = Box.createRigidArea(new Dimension(35, 35));
+		add(rigidArea_6);
 		
 		btnViewAs.addActionListener(new ActionListener() {
 

@@ -796,7 +796,7 @@ public class JConsole extends JScrollPane implements GUIConsoleInterface,
 
 	public void clearPane(){
 		cmdStart = 0;
-		print("@Graphical Code Explorer\n",Color.BLUE);
+		print("@Kodhi_123\n",Color.GREEN);
 		// TODO text.gett
 	}
 	
