@@ -48,7 +48,7 @@ public class Window extends JFrame{
 	//	this.context = context;
 		//System.out.println();
 		Splash.setMessage("constructing UI");
-		setTitle("Graphical Code Explorer");
+		setTitle("Kodhi 1 2 3 ");
 		setSize(1350, 740);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 				

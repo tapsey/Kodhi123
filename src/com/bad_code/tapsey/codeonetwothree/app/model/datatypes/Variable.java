@@ -19,8 +19,10 @@ public class Variable<T> extends Element<T> implements LowerDockable<T> {
 
 	public static final int VAR = 1;
 	public static final int CONST = 2;
+	DataType dataType;
 	Declarator dec;
-		public Variable(Declarator dec, int varType) {
+		public Variable(Declarator dec, int varType, DataType dataType) {
+			this.dataType = dataType;
 			this.varType = varType;
 			this.dec = dec;
 
@@ -40,20 +42,7 @@ public class Variable<T> extends Element<T> implements LowerDockable<T> {
 
 	public DataType getVariableDataType(){
 		
-		if(data instanceof Integer){
-			
-			return DataType.INTEGER;
-		}else if(data instanceof Double){
-			
-			return DataType.DOUBLE;
-		} else if(data instanceof Boolean){
-			
-			return DataType.BOOLEAN;
-		} else if(data instanceof String){
-			
-			return DataType.STRING;
-		}
-		return DataType.Void;
+		return dataType;
 		
 	}
 

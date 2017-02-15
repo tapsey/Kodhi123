@@ -17,12 +17,13 @@ public abstract class VariableDeclarator<T> extends Declarator{
 	protected String name;
 		
 	{
-		variable = new Variable<T>(this ,varType);
-		view  = new DeclaratorView(this);
+		
 	}
 	
 	public VariableDeclarator(DataType dataType){
 		this.dataType = dataType;
+		variable = new Variable<T>(this ,varType,dataType);
+		view  = new DeclaratorView(this);
 		}
 
 	public int getType() {
